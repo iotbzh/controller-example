@@ -1,0 +1,31 @@
+{
+    "id": "http://iot.bzh/download/public/schema/json/ctl-schema.json#",
+    "$schema": "http://iot.bzh/download/public/schema/json/ctl-schema.json#",
+    "metadata": {
+        "uid": "Test",
+        "version": "1.0",
+        "api": "ctrlTest",
+        "info": "Starts controller example.",
+        "require": [
+            "hello"
+        ]
+    },
+    "plugin":{
+        "uid": "CTL",
+        "libs": "ctrl.lua"
+    },
+    "onload":{
+        "uid": "init",
+        "info": "Initialisation",
+        "action": "lua://CTL#_launch_init"
+    },
+    "control":{
+        "uid": "ctrl_eg",
+        "info": "Launch example",
+        "action": "lua://CTL#_launch_example"
+    },
+    "events":{
+        "uid": "hello/LaunchExampleEvent",
+        "action": "lua://CTL#_event"
+    }
+}
